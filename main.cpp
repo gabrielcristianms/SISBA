@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main(){
+    //iniciar programa
+        //listar opções
+            //cadastrar conta
+            //consultar conta
+            //crédito
+            //débito
+            //transferência
+            //sair
+}
