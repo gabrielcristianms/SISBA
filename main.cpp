@@ -1,4 +1,5 @@
 #include <iostream>
+#include "conta.h"
 
 int main(){
     //iniciar programa
