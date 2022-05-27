@@ -1,26 +1,19 @@
-#include<vector>
-#include<utility>
-#include<iostream>
+#include<Conta.h>
 
-class conta{
-private:
-    int account_number;
-    double balance;
-public:
-    conta(/* args */);
+Conta::Conta(){
+    mAccountNumber = 0;
+    mBalance = 0.0;
+}
 
-    conta(int account_number_, double balance_){
-        account_number = account_number_;
-        balance = balance_;
-    }
-    
-    int getAccount_Number(){
-        return account_number;
-    }
+Conta::Conta(int mAccountNumber_, double mBalance_){
+    mAccountNumber = mAccountNumber_;
+    mBalance = mBalance_;
+}
 
-    double getBalance(){
-        return balance;
-    }
+int Conta::getAccountNumber(){
+    return mAccountNumber;
+}
 
-};
-
+double Conta::getBalance(){
+    return balance;
+}
