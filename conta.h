@@ -1,5 +1,7 @@
+#ifndef CONTA_H_
+#define CONTA_H_
+
 #include<vector>
-#include<utility>
 #include<iostream>
 
 class Conta{
@@ -14,3 +16,4 @@ public:
     int getAccountNumber();
     double getBalance();
 };
+#endif
