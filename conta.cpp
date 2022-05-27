@@ -1,4 +1,4 @@
-#include<conta.h>
+#include "conta.h"
 
 Conta::Conta(){
     mAccountNumber = 0;
@@ -7,6 +7,7 @@ Conta::Conta(){
 
 Conta::Conta(int mAccountNumber_){
     mAccountNumber = mAccountNumber_;
+    mBalance = 0.0;
 }
 
 int Conta::getAccountNumber(){
