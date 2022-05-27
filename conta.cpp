@@ -17,3 +17,7 @@ int Conta::getAccountNumber(){
 double Conta::getBalance(){
     return mBalance;
 }
+
+void Conta::setBalance(double balance_){
+    mBalance = balance_;
+}

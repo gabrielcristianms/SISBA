@@ -15,5 +15,6 @@ public:
     
     int getAccountNumber();
     double getBalance();
+    void setBalance(double);
 };
 #endif
