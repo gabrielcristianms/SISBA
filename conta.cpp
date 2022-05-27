@@ -1,13 +1,12 @@
-#include<Conta.h>
+#include<conta.h>
 
 Conta::Conta(){
     mAccountNumber = 0;
     mBalance = 0.0;
 }
 
-Conta::Conta(int mAccountNumber_, double mBalance_){
+Conta::Conta(int mAccountNumber_){
     mAccountNumber = mAccountNumber_;
-    mBalance = mBalance_;
 }
 
 int Conta::getAccountNumber(){
@@ -15,5 +14,5 @@ int Conta::getAccountNumber(){
 }
 
 double Conta::getBalance(){
-    return balance;
+    return mBalance;
 }

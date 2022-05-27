@@ -9,8 +9,8 @@ private:
 public:
     Conta(/* args */);
 
-    Conta(int, double);
+    Conta(int);
     
-    int getgAccountNumber();
+    int getAccountNumber();
     double getBalance();
 };
