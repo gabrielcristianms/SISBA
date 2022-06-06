@@ -63,7 +63,7 @@ int main(){
 
             for (auto &&i : listaContas){
                 if(i.getAccountNumber() == numero_conta){
-                    i.setBalance(valor); 
+                    i.setBalance(i.getBalance() + valor); 
                     std::cout << ">>>>>>> O valor " << valor << " foi creditado na conta de numero " << numero_conta << "\n\n";
                 }
             }
@@ -90,8 +90,18 @@ int main(){
 
             for (auto &&i : listaContas){
                 if(i.getAccountNumber() == numero_conta){
-                    i.setBalance(-valor);
-                    std::cout << ">>>>>>> O valor " << valor << " foi debitado na conta de numero " << numero_conta << "\n\n";
+                    if(i.getBalance() <= 0){
+                        std::cout << ">>>>>> Impossível realizar transação. Saldo negativo ou nulo." << "\n\n";
+                    }
+                    else if(i.getBalance() - valor < 0){
+                        std::cout << ">>>>>> Impossível realizar transação. Saldo insuficiente em conta." << "\n\n";
+                    }
+                    else{
+                        i.setBalance(i.getBalance() - valor);
+                        std::cout << ">>>>>>> O valor " << valor << " foi debitado na conta de numero " << numero_conta << "\n\n";
+                    }
+                    break;
+                    
                 }
             }
             
@@ -125,9 +135,17 @@ int main(){
 
             //Debito na conta origem
             for (auto &&i : listaContas){
-                if(i.getAccountNumber() == conta_origem){
-                    i.setBalance(i.getBalance() - valor);
+                if(i.getBalance() <= 0){
+                    std::cout << ">>>>>> Impossível realizar transação. Saldo negativo ou nulo." << "\n\n";
                 }
+                else if(i.getBalance() - valor < 0){
+                    std::cout << ">>>>>> Impossível realizar transação. Saldo insuficiente em conta." << "\n\n";
+                }
+                else{
+                    i.setBalance(i.getBalance() - valor);
+                    std::cout << ">>>>>>> O valor " << valor << " foi transferido da conta de numero " << conta_origem << " para a conta de numero " << conta_destino << "\n\n";
+                    }
+                break;
             }
 
             //Credito na conta destino
@@ -137,7 +155,6 @@ int main(){
                 }
             }
         }
-
         if(escolha == '0'){
             break;
         }
