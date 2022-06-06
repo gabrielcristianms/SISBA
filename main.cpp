@@ -61,6 +61,11 @@ int main(){
             ss >> valor;
             ss.clear();
 
+            if(valor < 0){
+                std::cout << ">>>>>> Nao e possivel fazer transacoes com valores negativos!\n\n";
+                continue;
+            }
+
             for (auto &&i : listaContas){
                 if(i.getAccountNumber() == numero_conta){
                     i.setBalance(i.getBalance() + valor); 
@@ -88,13 +93,18 @@ int main(){
             ss >> valor;
             ss.clear();
 
+            if(valor < 0){
+                std::cout << ">>>>>> Nao e possivel fazer transacoes com valores negativos!\n\n";
+                continue;
+            }
+
             for (auto &&i : listaContas){
                 if(i.getAccountNumber() == numero_conta){
                     if(i.getBalance() <= 0){
-                        std::cout << ">>>>>> Impossível realizar transação. Saldo negativo ou nulo." << "\n\n";
+                        std::cout << ">>>>>> Impossivel realizar transacao. Saldo negativo ou nulo." << "\n\n";
                     }
                     else if(i.getBalance() - valor < 0){
-                        std::cout << ">>>>>> Impossível realizar transação. Saldo insuficiente em conta." << "\n\n";
+                        std::cout << ">>>>>> Impossivel realizar transacao. Saldo insuficiente em conta." << "\n\n";
                     }
                     else{
                         i.setBalance(i.getBalance() - valor);
@@ -133,13 +143,18 @@ int main(){
             input.clear();
             ss.clear();
 
+            if(valor < 0){
+                std::cout << ">>>>>> Nao e possivel fazer transacoes com valores negativos!\n\n";
+                continue;
+            }
+
             //Debito na conta origem
             for (auto &&i : listaContas){
                 if(i.getBalance() <= 0){
-                    std::cout << ">>>>>> Impossível realizar transação. Saldo negativo ou nulo." << "\n\n";
+                    std::cout << ">>>>>> Impossivel realizar transacao. Saldo negativo ou nulo." << "\n\n";
                 }
                 else if(i.getBalance() - valor < 0){
-                    std::cout << ">>>>>> Impossível realizar transação. Saldo insuficiente em conta." << "\n\n";
+                    std::cout << ">>>>>> Impossivel realizar transacao. Saldo insuficiente em conta." << "\n\n";
                 }
                 else{
                     i.setBalance(i.getBalance() - valor);
@@ -157,8 +172,7 @@ int main(){
         }
         if(escolha == '0'){
             break;
-        }
-        
+        }        
     }
     //transferência
     //sair
